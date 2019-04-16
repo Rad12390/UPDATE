@@ -17,6 +17,8 @@
                      <th>Name</th>
                      <th>Email</th>
                      <th>Image</th>
+                     <th>Image</th>
+                    
                   </tr>
                </thead>
             </table>
@@ -32,9 +34,11 @@
                         { data: 'name', name: 'name' },
                         { data: 'email', name: 'email' },
                         { data: 'avatar', name: 'avatar' },
-                         {render: function (data, type, full, meta) {
-        return "<img src=\"" + data + "\" height=\"50\"/>";
-    }}
+                        {  data: 'avatar',name: 'avatar',
+                          render: function (data, type, full, meta) {
+                              return "<img src='/storage/"+data+"' height=\"50\"/>";
+                          }
+                        }
                    ]  
             });
          });
