@@ -177,6 +177,7 @@ return [
         TCG\Voyager\VoyagerServiceProvider::class,
          Intervention\Image\ImageServiceProvider::class,
           yajra\Datatables\DatatablesServiceProvider::class,
+           Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
          'Datatables' => yajra\Datatables\Facades\Datatables::class,
+          'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

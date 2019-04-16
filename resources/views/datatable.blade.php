@@ -42,7 +42,7 @@
                        },
                        {  data: 'id',
                         render: function (data, type, full, meta) {
-                            return "<a href='' id='"+data+"'>Download</a>"; 
+                            return "<a href='/downloadPDF/"+data+"' id='"+data+"'>Download</a>"; 
                         }
                       }
                    ]  

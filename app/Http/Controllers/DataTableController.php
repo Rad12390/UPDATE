@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Redirect;
 use DataTables;
+use PDF;
 use SocialNet\User;
 
 class DataTableController extends Controller
@@ -18,5 +19,12 @@ class DataTableController extends Controller
     public function getPosts()
     {
         return \DataTables::of(User::query())->make(true);
+    }
+    public function downloadPDF($id){
+      $user = User::find($id);
+     
+      $pdf = PDF::loadView('datatablepdf', compact('user'));
+      return $pdf->download('data.pdf');
+
     }
 }
