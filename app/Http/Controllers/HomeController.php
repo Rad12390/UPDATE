@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace SocialNet\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -25,4 +25,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
 }

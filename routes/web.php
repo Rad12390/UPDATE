@@ -18,8 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
+Route::get('homeforms', 'HomeformsController@index');
+Route::get('homeforms/getdata', 'HomeformsController@homeforms')->name('homeforms/homeforms');
+//Route::get('/homeforms', 'HomeformsController@homeforms');
+/*Route::controller('HomeformsController', 'HomeformsController', [
+    'anyData'  => 'datatables.data',
+    'getIndex' => 'datatables',
+]);*/
+Route::get('datatable', 'DataTableController@datatable');
+// Get Data
+Route::get('datatable/getdata', 'DataTableController@getPosts')->name('datatable/getdata');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
