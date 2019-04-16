@@ -16,8 +16,9 @@
                      <th>Id</th>
                      <th>Name</th>
                      <th>Email</th>
+                     <th>Image Url</th>
                      <th>Image</th>
-                     <th>Image</th>
+                     <th>Pdf</th>
                     
                   </tr>
                </thead>
@@ -38,7 +39,12 @@
                           render: function (data, type, full, meta) {
                               return "<img src='/storage/"+data+"' height=\"50\"/>";
                           }
+                       },
+                       {  data: 'id',
+                        render: function (data, type, full, meta) {
+                            return "<a href='' id='"+data+"'>Download</a>"; 
                         }
+                      }
                    ]  
             });
          });
