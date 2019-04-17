@@ -88,6 +88,7 @@
                 }
               }
            ]  
+           
     });
    /** for the update button in the datatable*/
    $('table tbody').on( 'click', '#updatedata', function () {
