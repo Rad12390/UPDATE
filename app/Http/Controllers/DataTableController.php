@@ -27,4 +27,8 @@ class DataTableController extends Controller
       return $pdf->download('data.pdf');
 
     }
+    public function updateuser(){
+      
+
+    }
 }
