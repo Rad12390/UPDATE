@@ -88,7 +88,7 @@
                 }
               }
            ]  
-           
+
     });
    /** for the update button in the datatable*/
    $('table tbody').on( 'click', '#updatedata', function () {
@@ -99,16 +99,18 @@
    /*ajax for the update*/
      $('table tbody').on( 'click', '#submitUserData', function () {
       var userid =  $(this).attr('data');
+      var username =  $("#username").val();
+      var email =  $("#email").val();
        $.ajax({
-       headers: {
-           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              },
-       type:'POST',
-       url:'/update',
-       data:'_token = <?php echo csrf_token() ?>',
-       success:function(data) {
-          $("#msg").html(data.msg);
-       }
+         headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+         type:'POST',
+         url:'/update',
+         data:'_token = <?php echo csrf_token() ?>,userid ='+userid+',username ='+username+',email ='+email+'',
+         success:function(data) {
+            $("#msg").html(data.msg);
+         }
     });
     });
 
