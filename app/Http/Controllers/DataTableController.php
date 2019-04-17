@@ -12,7 +12,7 @@ use SocialNet\User;
 class DataTableController extends Controller
 {    
     public function datatable()
-    {
+    {   
         return view('datatable');
     }
 
