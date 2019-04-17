@@ -28,6 +28,7 @@ Route::get('homeforms/getdata', 'HomeformsController@homeforms')->name('homeform
 Route::get('datatable', 'DataTableController@datatable');
 // Get Data
 Route::get('datatable/getdata', 'DataTableController@getPosts')->name('datatable/getdata');
+Route::post('/update', 'DataTableController@updateuser');
 Route::get('/downloadPDF/{id}','DataTableController@downloadPDF');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
