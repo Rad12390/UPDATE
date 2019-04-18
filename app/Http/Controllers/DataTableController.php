@@ -8,7 +8,7 @@ use Redirect;
 use DataTables;
 use PDF;
 use SocialNet\User;
-
+use DB;
 class DataTableController extends Controller
 {    
     public function datatable()
@@ -28,5 +28,10 @@ class DataTableController extends Controller
 
     }
     public function updateuser(Request $request){
-       echo  $data= $request->dataval;}
+        
+      DB::table('users')
+        ->where('id', $request->userid)  // find your user by their email
+        ->update(array('name' => $request->username,'email' => $request->email,'password' => $request->password));  
+    // return response()->json(['success'=>'Data is successfully added']);
+      }
 }

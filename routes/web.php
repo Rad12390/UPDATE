@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',['name123' => 'Taylor']);
 });
 
 Auth::routes();
@@ -34,3 +34,4 @@ Route::get('/downloadPDF/{id}','DataTableController@downloadPDF');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+

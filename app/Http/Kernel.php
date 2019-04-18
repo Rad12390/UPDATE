@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
         \SocialNet\Http\Middleware\TrustProxies::class,
     ];
 
+
     /**
      * The application's route middleware groups.
      *
@@ -60,6 +61,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'checkuser' => \Illuminate\Routing\Middleware\CheckUser::class,
     ];
 
     /**
