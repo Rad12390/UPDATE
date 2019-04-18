@@ -25,7 +25,7 @@ Route::get('homeforms/getdata', 'HomeformsController@homeforms')->name('homeform
     'anyData'  => 'datatables.data',
     'getIndex' => 'datatables',
 ]);*/
-Route::get('datatable', 'DataTableController@datatable');
+Route::get('datatable', 'DataTableController@datatable')->middleware('checkuser');
 Route::post('/update', 'DataTableController@updateuser');
 //Route::get('datatable/update', 'DataTableController@updateuser');
 // Get Data

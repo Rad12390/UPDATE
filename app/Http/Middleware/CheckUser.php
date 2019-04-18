@@ -2,7 +2,9 @@
 
 namespace SocialNet\Http\Middleware;
 
+
 use Closure;
+use DB;
 
 class CheckUser
 {
@@ -14,9 +16,13 @@ class CheckUser
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
-        echo "<pre>";
-        echo "dsjkfjsdkljfklds";die();
+    {   
+        $matchThese = ['id' => '1', 'role_id' => '1'];
+
+        /* $titles = DB::table('users')->where($matchThese)->first();
+print_r($titles);*/
+
+       //  die();
         return $next($request);
     }
 }
